@@ -2,6 +2,22 @@
 	<head>
 	</head>
 	<body>
-		Homework 1 index.html here
+	  <h1>
+    HomeWork 1 Writeup
+  </h1>
+  <h2>
+    Task 1: Simple Triangle Rasterization
+  </h2>
+  <p>
+I first created a bounding box of the input triangle by finding the minimum and maximum values of the x and y coordinates of the triangles vertices.	
+After this, I determined the correct winding order of the input triangle give points A,B, and C by computing the cross product of C-A and B-A.
+If this cross product had a negative z component, then I would swap the B and C vertices producting the correct winding order of vertices.
+I then traverse the pixels in the bounding box, testing if pixels are within the input triangle through an inside function I created that uses 
+dot products to determine if the given point is inside the triangle or not, if it was, the pixel would be filled in with the input color. 
+This method of rasterization is no worse than one that only checks samples within the bounding box, because it is a method that only checks samples
+ within the bounding box.
+  </p>
+  
+  
 	</body>
 </html>
