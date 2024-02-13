@@ -18,14 +18,25 @@ This method of rasterization is no worse than one that only checks samples withi
  within the bounding box.
   </p>
 
-<img src="https://github.com/cal-cs184-student/hw-webpages-sp24-adam2451/blob/2f58e16a2d0fbc8ba66df3e6c156399cf4fb25b8/hw1/189HWT1.png" alt="ScreenShot of basic test 4.">
+<img src="189HWT1.png" alt="ScreenShot of basic test 4.">
 
 
 <h2>
    Task 2: Super Sampling 
 </h2>
 <p>
+For our supersampling algorithm, we use the framebuffer and samplebuffer datastructures to store the information 
+	needed to complete supersampling. First, we rasterize the upsampled triangles to the samplebuffer in the 
+	triangle rasterization function, this is different from our algorithm in the first task, as we simply called fill pixel to 
+	rasterize. After the supersampling is complete, in the resolve to framebuffer function, we convert from samplebuffer
+	coordinates to the framebuffer coordinates, averaging the colors found in the samplebuffer into one pixdl in the framebuffer.
+	This antialiases our triangles, creating smoother corners as we see in the images below. While this does create a smoother
+	picture with less jaggies, we do see that the image is overall more blurry.
+	
 </p>
+	<img src="screenshot_2-13_14-1-51.png" alt="my_robot.png">
+	<img src="screenshot_2-13_14-1-54.png" alt="my_robot.png">
+	<img src="screenshot_2-13_14-1-56.png" alt="my_robot.png">
 
 <h2>
 	Task 3: Basic Transforms
