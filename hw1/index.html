@@ -57,5 +57,30 @@ Here we have my robot doing some lovely ballerina moves. Accomplished by applyin
 	have equal amounts of each color.
 </p>
 	<img src="screenshot_2-12_22-13-44.png" alt="colorwheel">
+
+<h2>
+	Task 5: Pixel Sampling 
+</h2>
+
+<p>
+	Nearest Pixel samplings works simply, as the name implies, by choosing the texel that is closest to the 
+	u,v coordinate. This was implemented simply by just rounding the input u and v coordinates to the nearest integer.
+	Bilinear sampling is more involved, seeking to blend the surrounding texels more smoothly by taking into account 
+	four different points surrounding the initial texel value.
+	Below we showcase nearest point sampling and bilinear sampling taking one sample per pixel.
+</p>
+	<img src="nearest1.png" alt="nearest_1sample">
+	<img src="billinear1.png" alt="bilinear_1sample">
+<p>
+	Next we showcase the same two pixel sampling methods, this time with 16x supersampling.
+</p>
+	<img src="nearest16.png" alt="nearest_16sample">
+	<img src="billinear16.png" alt="bilinear_16sample">
+
+<p>
+	We see that the bilinear method provides a generally smoother image than nearest-neighbor sampling, at the cost of 
+	more computation. 
+</p>
+	
 	</body>
 </html>
