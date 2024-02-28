@@ -23,5 +23,10 @@
 		<p>Here we use area-weighted vertex normals to implement Phong Shading. Given a vertex we wish to calculate the normal of in a halfedge mesh data structure, we first record our starting half edge. From there we traverse the vertices of the current face (call them A,B, and C) and calculate the surface normal by taking the cross product of the two vectors (B-A) and (C-A). We note that A is always the same in this calculation as it is the vertex we started on, while B and C change as we traverse the neighboring triangles. Once all the neighboring triangles normals have been calculated, we sum them together and then finally normalize to a unit vector, giving us the unit normal at our vertex. Below, the two pictures illustrate how much more smoothness this method produces in shading.</p>
 		<img src="teapotFlatShading.png" alt="Teapot with Flat Shading.">
 		<img src="teapotPhongShading.png" alt="Teapot with Phong Shading.">
+
+		<h1>Part 4: Edge Flip</h1>
+		<p>Here we implmented the edge flip mesh operation. This is done simply through a list of pointer reassignments on the appropriate halfmedge data structures. Namely, enumerating all the edges, halfedges,faces, and vertices of the original mesh. Creating a new mesh based on the edge flip, then reassigning pointers to their appropriate place. At one point, I thought this would involve calling setNeighbors on new half edges, but this resulted in segmentation faults. I fixed this by instead using the original half edges and this resulted in proper edge flip behavior. The two pictures below illustrate the before and after of some edge flipping.</p>
+		<img src="beforeFlip.png" alt="Original Wiremesh.">
+		<img src="afterFlip.png" alt="Wiremesh After Flips.">
 	</body>
 </html>
