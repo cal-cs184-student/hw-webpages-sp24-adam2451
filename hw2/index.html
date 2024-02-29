@@ -34,5 +34,17 @@
 		<img src="beforeFlip.png" alt="Original Wiremesh.">
 		<img src="Split.png" alt="Wiremesh with Split Operations applied.">
 		<img src="SplitAndFlip.png" alt="Wiremesh with both split and flip operations applied.">
+
+		<h1>Part 6: Loop Subdivision for Mesh Upsampling</h1>
+		<p>Loop Subdivision involved using our functions from parts 3 and 4 to upsample our mesh. We did this by first preprocessing all the new vertex posistions in the mesh, both for what would be old and new vertices. A bug that popped up at this point involved Visual Studio automatically truncating integer division when I wanted a float. This resulted in vertex posistions becoming zeroed out  or otherwise inccorect. This gave us empty looking meshes, or meshes with very pointy shapes.  We then split every existing edge in the mesh using our method from part 4, and subsequently flipped all the newly created edges that resulted from this. At this point, I added a new field called flipNew to be used in addition with isNew to distnguish between new edges that needed to be flipped or not. Not doing this resulted in infinite loops. After all edges were flipped we then use our preprocessed vertex posistions to populate all vertices within the mesh. Giving us our upsampled mesh.</p>
+		<p>Here are some iterations of our Loop Subdivision Algorithm at work.</p>
+		<img src="Cube0.png" alt="Original Wiremesh.">
+		<img src="Cube1.png" alt="1 Upsample.">
+		<img src="Cube2.png" alt="2 Upsamples.">
+		<img src="Cube3.png" alt="3 UpSamples.">
+		<p>We see above that the mesh becomes more assymetrical as we apply more upsamples. This occurs because our algorithm is designed to interpolate the geometry of smooth surfaces. When it encounters geometry with sharp edges it attempts to smooth it, which creates the asymmetry we see.</p>
+		<p>We can attempt to fix this by pre-splitting and flipping the mesh elements as we illustrate below.</p>
+		
+		
 	</body>
 </html>
