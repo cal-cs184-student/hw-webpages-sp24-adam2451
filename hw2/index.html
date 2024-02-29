@@ -25,8 +25,14 @@
 		<img src="teapotPhongShading.png" alt="Teapot with Phong Shading.">
 
 		<h1>Part 4: Edge Flip</h1>
-		<p>Here we implmented the edge flip mesh operation. This is done simply through a list of pointer reassignments on the appropriate halfmedge data structures. Namely, enumerating all the edges, halfedges,faces, and vertices of the original mesh. Creating a new mesh based on the edge flip, then reassigning pointers to their appropriate place. At one point, I thought this would involve calling setNeighbors on new half edges, but this resulted in segmentation faults. I fixed this by instead using the original half edges and this resulted in proper edge flip behavior. The two pictures below illustrate the before and after of some edge flipping.</p>
+		<p>Here we implmented the edge flip mesh operation. This is done simply through a list of pointer reassignments on the appropriate halfedge data structures. Namely, enumerating all the edges, halfedges,faces, and vertices of the original mesh. Creating a new mesh based on the edge flip, then reassigning pointers to their appropriate place. At one point, I thought this would involve calling setNeighbors on new half edges, but this resulted in segmentation faults. I fixed this by instead using the original half edges and this resulted in proper edge flip behavior. The two pictures below illustrate the before and after of some edge flipping.</p>
 		<img src="beforeFlip.png" alt="Original Wiremesh.">
 		<img src="afterFlip.png" alt="Wiremesh After Flips.">
+
+		<h1>Part 5: Edge Split </h1>
+		<p>Much like Edge Flip, implementing relies on the same implementation principles, but this time we add new edges, faces, and a new vertex when we call an edge split. Again, we carefully reassign pointers to the proper places. I had gotten stuck as my Edge Split call would simply result in the program crashing with little information from the debugger. Using the CHECK_CLOSED debug function allowed me to discover that one of my pointers wasn't properly pointing to its next neighbor. The three pictures illustrate the original mesh, the mesh with split operations applied, and the mesh with both flip and split operations applied, respectivley.</p>
+		<img src="beforeFlip.png" alt="Original Wiremesh.">
+		<img src="Split.png" alt="Wiremesh with Split Operations applied.">
+		<img src="SplitAndFlip.png" alt="Wiremesh with both split and flip operations applied.">
 	</body>
 </html>
