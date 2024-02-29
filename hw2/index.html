@@ -43,7 +43,13 @@
 		<img src="Cube2.png" alt="2 Upsamples.">
 		<img src="Cube3.png" alt="3 UpSamples.">
 		<p>We see above that the mesh becomes more assymetrical as we apply more upsamples. This occurs because our algorithm is designed to interpolate the geometry of smooth surfaces. When it encounters geometry with sharp edges it attempts to smooth it, which creates the asymmetry we see.</p>
-		<p>We can attempt to fix this by pre-splitting and flipping the mesh elements as we illustrate below.</p>
+		<p>We can attempt to fix this by pre-splitting to introduce more symmetry as we illustrate below.</p>
+		<img src="Symm0.png" alt="Cube With Each Edge Split.">
+		<img src="Symm1.png" alt="Cube With Each Edge Split.">
+		<img src="Symm2.png" alt="Cube With Each Edge Split.">
+		<img src="Symm3.png" alt="Cube With Each Edge Split.">
+		<p>This produces a much more symmetrical upsampled mesh, we love to see it. Also, just out of interesting it looks, below is an incredibly pointy mesh that was a bug from the floating point errors I mentioned earlier.</p>
+		<img src="Pointy.png" alt="Pointy">
 		
 		
 	</body>
