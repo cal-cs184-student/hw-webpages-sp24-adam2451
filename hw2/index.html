@@ -3,7 +3,7 @@
 	</head>
 	<body>
 		<h1> Homework 2 Overview:</h1>
-		<p>Insert Overview Here</p>
+		<p>In this assignment, we implement  various algorithms involved in rendering meshes. We first begin by implmenting one dimensional de Casteljau's algorithm to model Bezier curves. From there we use this algorithm to extend to three dimensional space and fully render three dimensional mesh objects. From there we move on to working with triangle meshes and the halfedge data structure, with the goal of upsampling our meshes to make them smoother as well as introduce better shading techniques. Our first improvment to our mesh rendering is with area-weighted vertex normals to implement Phong shading. Then we implement the edge flip and edge split operations to enable us to upsample our meshes with the loop subdivision algorithm. This lets us create the prettiest meshes possible :) . </p>
 		<h1>Part 1: Bezier Curves with 1D de Casteljau Subdivision</h1>
 		<p>De Casteljiau's algorithm allows us to evalutate Bezier curves. Given a set of control points, we linearly interpolate every consequtive pair by parameter t, which is the point on the curve we want to evaluate. This 
 		results in another set of control points. We repeate this reursivley until only a single point remains. This point is the point on the Bezier curve given by parameter t.</p>
