@@ -2,6 +2,16 @@
 	<head>
 	</head>
 	<body>
-		Homework 3 index.html here
+		<h1>Homework 3 Overview:</h1>
+		<p>INSERT OVERVIEW HERE</p>
+
+		<h2>Part 1: Ray Generation and Scene Intersection</h2>
+		<p>In this part, we implemented the logic behind generating rays and basic pixel sampling over them, along with some basic ray intersection tests for triangles and spheres. For ray generation, given 
+		some normalized coordinates x and y, we convert them to the camera space by the following transformations. CameraX = 2 * x * tan(.5 * hFovRads) - tan(.5 * hFovRads) and CameraY = 2 * y * tan(.5 * vFovRads) - tan(.5 * vFovRads).
+		Where the tangent function is used to scale the image space to the camera space. With this we generate the ray vector in the camera space and then convert it to the world space using the given camera to world transformation matrix, 
+		giving us our desired ray in the world space. We then implemented two intersection tests for both triangles and spheres. Triangle intersection was tested using the Moller-Trumbore algorithm, which uses barycentric coordinates 
+		and cross products to determine if a ray intersects a given triangle, while also calculating the time along the ray at which the intersection occurrs. Sphere intersection was tested as given by the lecture slides, that is by 
+		solving for the roots of a quadratic equation.  The following are some images that are generated from this basic implementaion of ray generation and intersection tests.</p>
+		
 	</body>
 </html>
