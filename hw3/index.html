@@ -22,9 +22,10 @@
 		calculating which split would result in the most equal amount of primitives per side of the axis. This ensures an even amount of work is done betweent nodes in the tree as well as groups closer primitives together. 
 		Here are some images of some files that could only be rendered using our BVH construction algorithm.</p>
 		
-		<img src="dragon.png" alt="Spheres Rendered With Basic Intersection and Ray Generation">
-		<img src="basicCoil.png" alt="Coil Rendered With Basic Intersection and Ray Generation">
-
-		<p></p>
+		<img src="dragon.png" alt="Spheres Rendered With BVH and Ray Generation">
+		<img src="bunny.png" alt="Coil Rendered With BVH and Ray Generation">		
+		<p>The above images rendred within a minute on my machine where they previously couldn't be rendered at all.
+		For a more accessible benchmark, I rendered the cow.dae file using the naive implementation, and then my BVH algorithm.
+		In the naive implementation, the cow rendered in 44 seconds and on the improved BCH implementation, in 2.5 seconds. </p>
 	</body>
 </html>
