@@ -14,5 +14,17 @@
 		solving for the roots of a quadratic equation.  The following are some images that are generated from this basic implementaion of ray generation and intersection tests.</p>
 		<img src="basicSpheres.png" alt="Spheres Rendered With Basic Intersection and Ray Generation">
 		<img src="basicCoil.png" alt="Coil Rendered With Basic Intersection and Ray Generation">
+
+		<h2>Part 1: Bounding Volume Hierarchy </h2>
+		<p>Here we implement a BVH construction algorithm to speed up the rednering of meshes. Before this, every ray, even those that are very unlikeley to intersect with anything, are tested for intersection. 
+		This results in incredibly slow rendering times for anything that is moderatley complicated. We implement a  recursive BVH construction algorithm that begins with the the largest bounding box of the object,
+		and then splitting up this box into finer ones. We choose the splitting point by calculating the average centroid point of the bounding box and splitting along the x,y, or z axis. The axis is chosen by 
+		calculating which split would result in the most equal amount of primitives per side of the axis. This ensures an even amount of work is done betweent nodes in the tree as well as groups closer primitives together. 
+		Here are some images of some files that could only be rendered using our BVH construction algorithm.</p>
+		
+		<img src="dragon.png" alt="Spheres Rendered With Basic Intersection and Ray Generation">
+		<img src="basicCoil.png" alt="Coil Rendered With Basic Intersection and Ray Generation">
+
+		<p></p>
 	</body>
 </html>
