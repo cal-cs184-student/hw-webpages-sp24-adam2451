@@ -3,7 +3,9 @@
 	</head>
 	<body>
 		<h1>Homework 3 Overview:</h1>
-		<p>INSERT OVERVIEW HERE</p>
+		<p>In this project we implement basic ray casting, ray acceleration structures, and direct illumination. Some more features should have been implemented but what can I say. For basic ray generation we create some intersection tests for common primitives we render in our scenes, mainly triangles and spheres. Pixels themselvesd are raytaraces and this involves transforming the coordinates of the camera in the scene to the screen as well as implementing sampling as we did in  homeworke one to produce a sharper image. This basic implementation caused everysingle ray in the scene to be tested for intersection with every scene primitive.
+		To improve upon this we implemented a Bounding Volume Heiarchy that separates the scene into smaller chunks and allow for speedier rendering by using bounding boxes to eliminate rays faster. Primitives were split along the axis that resulted in the most even spread of primitives between two sides of the split point. For lighting, we started with direct illumination. 
+		This was done in two ways, either through randomly sampling a hemisphere to produce rays that test lighting in the scene, or through importance sampling. Where instead of randomly sampling a  ray and hoping it hits a light source, we randomly sample rays between light sources and the object we are interested in illuminating. I'd love to tell you more about global illumination and adaptive sampling but life simply did not have that in store for us. Perhaps another day.   </p>
 
 		<h2>Part 1: Ray Generation and Scene Intersection</h2>
 		<p>In this part, we implemented the logic behind generating rays and basic pixel sampling over them, along with some basic ray intersection tests for triangles and spheres. For ray generation, given 
