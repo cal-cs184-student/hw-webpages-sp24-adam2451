@@ -35,17 +35,17 @@
 		In the second method, we instead sample the light objects themselves and cast rays directly between our intersection object and light objects, similarly allowing us to calculate the lighting our object would or wouldn't recieve. This second implementation involved some additonaly calculations to make sure that rays cast between light sources and objects behaved properly. One example is determining which side of the surface that a light ray  hit an object at, if the ray is coming from behind the surface of the object, we don't need to consider this light ray and can throw it away. 
 		This was caclulated by calculating the cosine of the angle between the surface normal of the surface and the light ray, the light coming from behind the object having a negatvie cosine. We then check if the light ray hits any other object in the box, and if it does, againt throwing the ray away, as the light will instead be hitting another object in the scene instead of our input object. After this, we can calculate the lighting as we did in the previous method.  </p>
 
-		<p>The following two images are of the same scene being rendered with our two different methods of direct light illuminination. The left using hemishpere sampling and the right being through importance sampling.</p>
+		<p>The following two images are of the same scene being rendered with our two different methods of direct light illuminination. The left using hemishpere sampling and the right being through importance sampling. Overall, we see that importance sampling produces a cleaner image and in my exoerimentation rendered faster than hemisphere sampling did.</p>
 
 		<img src="hemiSampleSpheres.png" alt="Spheres Rendered With BVH and Ray Generation">
 		<img src="importSampleSpheres.png" alt="Coil Rendered With BVH and Ray Generation">
 
 		<p>The following four images are generated with our importance sampling method using 1, 4, 16, and 32 light rays respectivley.</p>
 
-		<img src="nosie1.png" alt="Spheres Rendered With BVH and Ray Generation">
-		<img src="nosie2.png" alt="Spheres Rendered With BVH and Ray Generation">
-		<img src="nosie3.png" alt="Spheres Rendered With BVH and Ray Generation">
-		<img src="nosie4.png" alt="Spheres Rendered With BVH and Ray Generation">
+		<img src="noise1.png" alt="Spheres Rendered With BVH and Ray Generation">
+		<img src="noise2.png" alt="Spheres Rendered With BVH and Ray Generation">
+		<img src="noise3.png" alt="Spheres Rendered With BVH and Ray Generation">
+		<img src="noise4.png" alt="Spheres Rendered With BVH and Ray Generation">
 		
 	</body>
 </html>
