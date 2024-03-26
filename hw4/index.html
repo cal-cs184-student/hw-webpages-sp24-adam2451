@@ -7,7 +7,11 @@
 		<p>INSERT OVERVIEW HERE</p>
 
 		<h2>Part 1: Masses And Springs</h2>
-		<p>First we create the mesh associated with a piece of cloth. This involved creating point masses on the cloths surface as well as springs connecting them, these will be used to help simulate the cloths movement.
+		<p>First we create the mesh associated with a piece of cloth. To do this, we first iterate through all points in the mesh, creating a matrix of boolean values that store if the visited point is pinned or not. 
+		We then iterate through all the points again creating point masses at evenly spaced points along the mesh. Lastly, we iterate through all the points again, creating springs between a point mass and its neighbors, if a qualifying neighbor exists. 	
 		The following are screen shots of such a mesh, with all constraints, without shearing constraints, and with only shearing constraints respectivley.</p>
+		<img src="pinned2All.png" alt="All Constraints Active">
+		<img src="pinned2NoShear.png" alt="Without Shearing Active">
+		<img src="pinned2Shear.png" alt="Only Shearing Active">
 	</body>
 </html>
