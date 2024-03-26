@@ -15,6 +15,25 @@
 		<img src="pinned2Shear.png" alt="Only Shearing Active">\
 
 		<h2>Part 2:  Simulation Via Numerical Integration</h2>
-		<p>Here start to simulate the movement of the cloth falling by implementing Numerical Verlet Integration along with some basic constraints on the springs to prevent unrealistic stretching in short time spans.</p>
+		
+		<p>Here start to simulate the movement of the cloth falling by implementing Numerical Verlet Integration along with some basic constraints on the springs to prevent unrealistic stretching over short time spans.
+		First we show how the cloth looks on the default settings in a resting state. </p>
+		<img src="pinned4Final.png" alt="Cloth in Final Resting State On Default Settings">
+		
+		<p>The two images below show the difference between low and high density settings respectivley. On a low density setting, the cloth falls much slower and appears to be a lot more floaty as it falls, and when at rest seems to be under less tension than the cloth at default settings.
+		On a higher density setting (200g/cm^2), the cloth falls much faster and feels heavier, this also however introduces a lot more jittering in the simulation, where the cloth jolts and stutters forever.</p>
+		<img src="pinned4LowDensity.png" alt="Low Density Cloth">
+		<img src="pinned4HighDensity.png" alt="High Density Cloth">
+
+		<p>The next to images show the difference between low and high spring constants. Similar to a high density cloth, a low spring constant experiences some stuttering, the frequency of which is much smaller but the effect larger, where the cloth suddenly jumps massivley.
+		With a very high spring constant, the cloth appears mostly normal, but has much less folding and creasing you would see in real cloth. </p>
+		<img src="pinned4LowKS.png" alt="Low Spring Constant Cloth">
+		<img src="pinned4HighKS.png" alt="High Spring Constant Cloth">
+
+		<p>These last images show the difference between 0% damping and 100% damping respectivley. On 0% damping, the cloth swings back and forth as if blown by the wind, this makes sense as the damping was contributing to simulating the loss of energy in the system.
+		On 100% damping, the cloth moves very slowly and settles in place near instantly, as there is now no energy in the system at all. </p>
+		<img src="pinnedNoDamp.png" alt="0% Damping Cloth">
+		<img src="pinned4HighDamp.png" alt="100% Damping Cloth">
+		
 	</body>
 </html>
